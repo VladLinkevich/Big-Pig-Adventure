@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class OpponentMovement : MonoBehaviour
@@ -32,7 +31,7 @@ public class OpponentMovement : MonoBehaviour
 
         _startChangeDirectionTimer = 0;
         _currentMoveAngle = moveAngles[Random.Range(0, moveAngles.Length)];
-        imageHandler.ChoseDirection(AngleToVector2(_currentMoveAngle));
+        imageHandler.GetImageView()?.ChoseDirection(AngleToVector2(_currentMoveAngle));
     }
 
     private Vector2 AngleToVector2(float angle)

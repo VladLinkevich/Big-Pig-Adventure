@@ -26,6 +26,7 @@ public class Projectile : MonoBehaviour
         _tween.Kill();
         
         Debug.Log($"{other.gameObject.tag}");
+        other.gameObject.GetComponent<ImageHandler>()?.SetCurrentState(UnitState.Dirty);
         gameObject.SetActive(false);
     }
 }

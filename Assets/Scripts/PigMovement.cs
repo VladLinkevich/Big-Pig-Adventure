@@ -19,7 +19,7 @@ public class PigMovement : MonoBehaviour
         float force = joystick.Direction.magnitude;
         Vector2 normal = joystick.Direction.normalized;
             
-        imageHandler.ChoseDirection(normal);
+        imageHandler.GetImageView().ChoseDirection(normal);
 
         characterController.Move(normal * force * speed);
     }
