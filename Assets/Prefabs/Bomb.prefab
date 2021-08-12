@@ -106,6 +106,11 @@ MonoBehaviour:
     m_RotationOrder: 4
   sprite: {fileID: 8973702759716051997}
   projectilePool: {fileID: 0}
+  projectileShotAngles:
+  - -8
+  - 90
+  - 172
+  - -90
   duration: 3
   projectileDistance: 3
 --- !u!1 &7427895625579344255

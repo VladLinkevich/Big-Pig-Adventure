@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 
@@ -9,7 +6,9 @@ public class Bomb : MonoBehaviour
     public AnimationCurve animationCurve;
     public SpriteRenderer sprite;
     public ProjectilePool projectilePool;
-    
+
+    public float[] projectileShotAngles;
+
     public float duration;
     public float projectileDistance;
 
@@ -29,13 +28,25 @@ public class Bomb : MonoBehaviour
     {
         Vector3 bombPosition = transform.position;
         
-        projectilePool.GetProjectile().Shot(bombPosition, 
-            bombPosition + Vector3.right * projectileDistance);
-        
-        projectilePool.GetProjectile().Shot(bombPosition, 
-            bombPosition + Vector3.left * projectileDistance);
-        
-        
+        StartProjectile(bombPosition);
+
         gameObject.SetActive(false);
+    }
+
+    private void StartProjectile(Vector3 bombPosition)
+    {
+        foreach (float angle in projectileShotAngles)
+        {
+            projectilePool.GetProjectile().Shot(bombPosition,
+                GetEndPoint(bombPosition, projectileDistance, angle));
+        }
+    }
+
+    private Vector3 GetEndPoint(Vector3 startPoint, float distance, float angle)
+    {
+        return startPoint +
+               new Vector3(
+                   Mathf.Sin(Mathf.Deg2Rad * angle) * distance,
+                   -Mathf.Cos(Mathf.Deg2Rad * angle) * distance);
     }
 }
