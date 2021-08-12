@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 40422208409524962, guid: a5ac55b06e7ea884dad8d6879e72f0c3, type: 3}
+  m_Sprite: {fileID: -4697590009104051591, guid: e37f84007b501954299d6f18c9bf92dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -153,7 +153,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -5792511334730316588, guid: a5ac55b06e7ea884dad8d6879e72f0c3, type: 3}
+  m_Sprite: {fileID: -284627385986098231, guid: e37f84007b501954299d6f18c9bf92dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -235,7 +235,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -4671057516089923990, guid: a5ac55b06e7ea884dad8d6879e72f0c3, type: 3}
+  m_Sprite: {fileID: 3191130952945803347, guid: e37f84007b501954299d6f18c9bf92dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -317,7 +317,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 1382654831687872026, guid: a5ac55b06e7ea884dad8d6879e72f0c3, type: 3}
+  m_Sprite: {fileID: -9215070241222095863, guid: e37f84007b501954299d6f18c9bf92dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -339,9 +339,9 @@ GameObject:
   - component: {fileID: 826512004116548004}
   - component: {fileID: 9005229050201646406}
   - component: {fileID: 7720730902788522216}
-  - component: {fileID: 1069206171320847373}
+  - component: {fileID: 9043823758058102007}
   m_Layer: 0
-  m_Name: Pig
+  m_Name: Opponent
   m_TagString: Pig
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -376,10 +376,10 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 0
-  m_Radius: 0.3
+  m_Height: 0.5
+  m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.05
+  m_StepOffset: 0.1
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.01
   m_Center: {x: 0, y: 0, z: 0}
@@ -399,7 +399,7 @@ MonoBehaviour:
   downPigGameObject: {fileID: 2643853638952446063}
   leftPigGameObject: {fileID: 5455979050705929497}
   rightPigGameObject: {fileID: 3008341329567974241}
---- !u!114 &1069206171320847373
+--- !u!114 &9043823758058102007
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -408,10 +408,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8540422990742793196}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7e52a3d86224bc797a884095a18e259, type: 3}
+  m_Script: {fileID: 11500000, guid: d2ccbcb0fd784dc9ac45ec31c3d02d3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   characterController: {fileID: 9005229050201646406}
   imageHandler: {fileID: 7720730902788522216}
-  velocity: 0.05
+  moveAngles:
+  - -30
+  - 90
+  - 150
+  - -90
+  durationBetweenChangeDirection: 2
+  speed: 0.02
